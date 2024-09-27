@@ -1,0 +1,10 @@
+### Root request without feature
+GET http://localhost:8080/ HTTP/1.1
+
+### With rebranding feature
+GET http://localhost:8080/ HTTP/1.1
+X-geo: NL
+
+### Without rebranding feature
+GET http://localhost:8080/ HTTP/1.1
+X-geo: DE

@@ -1,0 +1,25 @@
+{
+  "flags": {
+    "is-rebranded": {
+      "variants": {
+        "on": true,
+        "off": false
+      },
+      "state": "ENABLED",
+      "defaultVariant": "off",
+      "targeting": {
+        "if": [
+          {
+            "===": [
+              {
+                "var": "geoCode"
+              },
+              "NL"
+            ]
+          },
+          "on"
+        ]
+      }
+    }
+  }
+}
