@@ -1,6 +1,5 @@
 import {OpenFeature} from "@openfeature/server-sdk";
-import {inMemoryFeatureProvider} from "./inMemoryProvider";
-import {FlagdProvider} from "@openfeature/flagd-provider";
+import {flagdProvider} from "./flagdProvider";
 
 export const featureFlags = OpenFeature.getClient();
 
@@ -8,4 +7,4 @@ export const featureFlags = OpenFeature.getClient();
 // OpenFeature.setProvider(inMemoryFeatureProvider);
 
 // Flagd feature provider
-OpenFeature.setProvider(new FlagdProvider());
+OpenFeature.setProvider(flagdProvider);
