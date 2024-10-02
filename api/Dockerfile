@@ -12,11 +12,8 @@ RUN yarn install
 # Bundle app source
 COPY . .
 
-# Build the TypeScript files
-RUN yarn run build
-
 # Expose port 8080
 EXPOSE 8080
 
 # Start the app
-CMD yarn run start
+CMD yarn dev

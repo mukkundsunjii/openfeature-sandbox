@@ -5,8 +5,7 @@ import {z} from "zod";
 import {createApiResponse} from "@/api-docs/openAPIResponseBuilders";
 import {ServiceResponse} from "@/common/models/serviceResponse";
 import {handleServiceResponse} from "@/common/utils/httpHandlers";
-import {GeoCodeContext} from "@/common/featureFlag/inMemoryProvider";
-import {featureFlags} from "@/common/featureFlag/openFeature";
+import {featureFlags, GeoCodeContext} from "@/common/featureFlag/openFeature";
 
 export const welcomeRegistry = new OpenAPIRegistry();
 export const welcomeRouter: Router = express.Router();
@@ -19,7 +18,7 @@ welcomeRegistry.registerPath({
 });
 
 welcomeRouter.get("/", async (req: Request, res: Response) => {
-  const context: GeoCodeContext = {geoCode: req.headers["x-geo"] as string};
+  const context: GeoCodeContext = {targetingKey: String(req.headers["x-geo"]) ?? ""};
 
   // Rebranding feature
   const isRebranded = await featureFlags.getBooleanValue("is-rebranded", false, context);

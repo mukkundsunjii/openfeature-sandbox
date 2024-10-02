@@ -21,6 +21,8 @@
   "dependencies": {
     "@asteasolutions/zod-to-openapi": "^7.0.0",
     "@grpc/grpc-js": "^1.11.3",
+    "@launchdarkly/node-server-sdk": "^9.6.0",
+    "@launchdarkly/openfeature-node-server": "^1.0.0",
     "@openfeature/core": "^1.4.0",
     "@openfeature/flagd-provider": "^0.13.1",
     "@openfeature/server-sdk": "^1.15.1",

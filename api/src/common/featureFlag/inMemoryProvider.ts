@@ -1,7 +1,5 @@
 import {EvaluationContext, InMemoryProvider} from "@openfeature/server-sdk";
 
-export type GeoCodeContext = {geoCode: string};
-
 const FLAG_CONFIGURATION = {
   "is-rebranded": {
     variants: {
@@ -11,7 +9,7 @@ const FLAG_CONFIGURATION = {
     disabled: false,
     defaultVariant: "on",
     contextEvaluator: (context: EvaluationContext) => {
-      if (context.geoCode === "NL") {
+      if (context.targetingKey === "NL") {
         return "on";
       }
       return "off"; // Provide a default return value
